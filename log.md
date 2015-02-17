@@ -1,11 +1,11 @@
 #Log File To Categorize To-Dos, completed, as well as Relative Difficulty!
 
-* <font color="red"> Implement Engine Classes </font>
+* <font color="red"> Implement Engine Classes[HARDER] </font>
   1. Card.py
   2. Deck.py
   3. Player.py
   4. DeckFactory.py
-* <font color="green"> Write UnitTests for Methods of Engine Classes </font>
+* <font color="green"> Write UnitTests for Methods of Engine Classes[EASY] </font>
   1. Card.py
     1. method 1
     2. method 2
