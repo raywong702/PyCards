@@ -30,6 +30,9 @@ class Card:
         assert isinstance(suit, int), "suit is not an int"
         assert rank >= 1 and rank <= 13
         assert suit >= 0 and suit <= 3
+
+        assert rank >= 1 and rank <= 13, "rank must be 1-13"
+        assert suit >= 0 and suit <= 3, "suit must be 0-3"
         self.rank = rank
         self.suit = suit
 
