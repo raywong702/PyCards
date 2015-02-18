@@ -27,6 +27,10 @@ class Card:
              13: 'King'}
 
     def __init__(self, rank, suit):
+        assert isinstance(rank, int), "rank is not an int"
+        assert isinstance(suit, int), "suit is not an int"
+        assert rank >= 1 and rank <= 13
+        assert suit >= 0 and suit <= 3
         self.rank = rank
         self.suit = suit
 
