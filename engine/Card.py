@@ -28,6 +28,9 @@ class Card:
     def __init__(self, rank, suit):
         assert isinstance(rank, int), "rank is not an int"
         assert isinstance(suit, int), "suit is not an int"
+        assert rank >= 1 and rank <= 13
+        assert suit >= 0 and suit <= 3
+
         assert rank >= 1 and rank <= 13, "rank must be 1-13"
         assert suit >= 0 and suit <= 3, "suit must be 0-3"
         self.rank = rank
@@ -36,3 +39,7 @@ class Card:
     def __str__(self):
         """Return human readable representation"""
         return "{} of {}".format(self.ranks[self.rank], self.suits[self.suit])
+
+
+if __name__ == '__main__':
+    pass
