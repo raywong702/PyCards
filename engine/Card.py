@@ -4,6 +4,8 @@ class Card(object):
     Attributes:
         rank: integer 1-13, Ace - King
         suit: integer 0-3, Clubs, Diamonds, Hearts, Spades
+
+    Use the accessor methods getRank() and getSuit()
     """
     
     __suits = {0:'Clubs',
@@ -38,12 +40,13 @@ class Card(object):
 
     def __str__(self):
         """Return human readable representation"""
-        return "{} of {}".format(self.__ranks[self.rank], self.__suits[self.suit])
+        return "{} of {}".format(self.__ranks[self.__rank],
+                                 self.__suits[self.__suit])
 
-    def getRank():
+    def getRank(self):
         return self.__rank
 
-    def getSuit():
+    def getSuit(self):
         return self.__suit
 
 if __name__ == '__main__':
