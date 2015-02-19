@@ -34,7 +34,10 @@ class Deck(object):
         shuf(self.__pile)
 
     def find(self, card):
-        """Find index of a specic Card in deck. Return -1 if not found"""
+        """Find index of a specic Card in deck. Return -1 if not found
+        
+        @param card is an instance of Card class
+        """
 
         ERROR1 = "card, '{}', is not a Card type".format(card)
         assert isinstance(card, c.Card), ERROR1
@@ -55,7 +58,7 @@ class Deck(object):
     def append(self, card):
         """Add a card to the deck.
        
-        @param instance of the Card class
+        @param card is an instance of Card class
         """
 
         ERROR1 = "card, '{}', is not a Card type".format(card)
@@ -69,7 +72,10 @@ class Deck(object):
         return self.__pile.pop()
 
     def popCard(self, card):
-        """Remove a specific card from the deck."""
+        """Remove a specific card from the deck.
+        
+        @param card is an instance of Card class
+        """
 
         ERROR1 = "card, '{}', is not a Card type".format(card)
         assert isinstance(card, c.Card), ERROR1
