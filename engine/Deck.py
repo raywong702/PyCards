@@ -16,7 +16,7 @@ class Deck(object):
         """
 
         assert isinstance(num_of_decks, int), "num_of_decks is not an int"
-        assert num_of_decks > 0, "num_of_decks must be greater than 0"
+        assert num_of_decks >= 0, "num_of_decks must be greater than 0"
         self.pile = [c.Card(r, s) for r in range(1, 14) for s in range(4)] * num_of_decks
 
     def __str__(self):
