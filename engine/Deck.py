@@ -26,3 +26,6 @@ class Deck(object):
     def shuffle(self):
         """Shuffles the deck"""
         shuf(self.pile)
+
+if __name__ == '__main__':
+    pass
