@@ -1,4 +1,4 @@
-class Card:
+class Card(object):
     """Represents a playing card
 
     Attributes:
