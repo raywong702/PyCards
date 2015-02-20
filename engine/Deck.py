@@ -1,4 +1,5 @@
 from random import shuffle as shuf
+from random import randint as rint
 import Card as c
 
 class Deck(object):
@@ -68,8 +69,12 @@ class Deck(object):
 
     def pop(self):
         """Draw a card from the the deck."""
-
         return self.__pile.pop()
+###### work on this later
+        #try:
+        #    return self.__pile.pop()
+        #except IndexError:
+        #    return none
 
     def popCard(self, card):
         """Remove a specific card from the deck.
@@ -85,6 +90,12 @@ class Deck(object):
             return None
         else:
             return self.__pile.pop(index) 
+
+    def popRandomCard(self):
+        if self.__pile:         # not empty
+            index = rint(0, len(self.__pile) - 1)
+            return self.__pile.pop(index)
+        return None
 
 
 if __name__ == '__main__':
