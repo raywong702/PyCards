@@ -22,7 +22,7 @@ class Deck(object):
         assert isinstance(num_of_decks, int), __ERROR1
         assert num_of_decks >= 0, __ERROR2
 
-        self.__pile = [c.Card(r, s) for r in range(1, 14) for s in range(4)]
+        self.__pile = [c.Card(r, s) for r in range(1, 14) for s in range(1, 5)]
         self.__pile *= num_of_decks
 
     def __str__(self):
