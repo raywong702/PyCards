@@ -30,15 +30,7 @@ class Card(object):
                13:'King'}
 
     def __init__(self, rank, suit):
-        assert isinstance(rank, int), "rank is not an int"
-        assert isinstance(suit, int), "suit is not an int"
-        assert rank >= 0 and rank <= 13
-        assert suit >= 0 and suit <= 4
-
-        assert rank >= 0 and rank <= 14, "rank must be 1-14"
-        assert suit >= 0 and suit <= 4, "suit must be 0-4"
-        self.__rank = rank
-        self.__suit = suit
+        self.setCard(rank, suit)
 
     def __str__(self):
         """Return human readable representation"""
@@ -53,6 +45,46 @@ class Card(object):
 
     def getSuit(self):
         return self.__suit
+
+
+    # Create new cards besides thes normal 52 card deck and Jokers
+    def updateSuits(self, suit):
+        """Add more suits
+
+        @param suit creat a new card suit.
+        It is an instance of string.
+        """
+        assert isinstance(suit, str), "suit '{}' is not a string".format(suit)
+        assert suit, "suit is an empty string"
+        self.__suits.update({len(self.__suits):suit})
+
+    def updateRanks(self, rank):
+        """Add more ranks
+
+        @param rank creat a new card rank.
+        It is an instance of string.
+        """
+        assert isinstance(rank, str), "suit '{}' is not a string".format(rank)
+        self.__suits.update({len(self.__ranks):rank})
+        assert rank, "rank is an empty string"
+        self.__suits.update({len(self.__suits):suit})
+
+    # Set the card. Used for initialization, 
+    # Can be used for setting up new cards after running the updatSuits and updateRanks functions
+    def setCard(self, rank, suit):
+        assert isinstance(rank, int), "rank '{}' is not an int".format(rank)
+        assert isinstance(suit, int), "suit '{}' is not an int".format(suit)
+
+        __len_ranks = len(self.__ranks)
+        __len_suits = len(self.__suits)
+        __ERROR1 = "rank '{}' must be 1-{}".format(rank, __len_ranks)
+        __ERROR2 = "suit '{}' must be 0-{}".format(suit, __len_suits)
+
+        assert rank >= 0 and rank < __len_ranks, __ERROR1
+        assert suit >= 0 and suit < __len_suits, __ERROR2
+
+        self.__rank = rank
+        self.__suit = suit
 
 if __name__ == '__main__':
     pass
