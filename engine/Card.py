@@ -73,6 +73,11 @@ class Card(object):
     # Can be used for setting up new cards
     # after running the updateSuits and updateRanks functions
     def setCard(self, rank, suit):
+        """Set the card's rank and suit
+
+        @param rank the card's rank
+        @param suit the card's suit
+        """
         assert isinstance(rank, int), "rank '{}' is not an int".format(rank)
         assert isinstance(suit, int), "suit '{}' is not an int".format(suit)
 
@@ -86,6 +91,20 @@ class Card(object):
 
         self.__rank = rank
         self.__suit = suit
+
+    def equals(self, card):
+        """Returns true if card card equals passed in card. 
+        Returns false otherwise
+        
+        @param card. Card type
+        """
+        ERROR = "card '{}' is not a Card type".format(card)
+        assert isinstance(card, Card), ERROR
+
+        if (self.getRank() == card.getRank() and 
+                self.getSuit() == card.getSuit()):
+            return True
+        return False
 
 if __name__ == '__main__':
     pass
