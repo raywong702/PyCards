@@ -61,27 +61,28 @@ class Deck(object):
 
         self.__pile.append(card)
 
-    def pop(self):
-        """Draw a card from the the deck."""
-        try:
-            return  self.__pile.pop()
-        except IndexError:
-            return None
+    def pop(self, *args):
+        """Draw a card
 
-    def popCard(self, card):
-        """Remove a specific card from the deck.
-        
-        @param card is an instance of Card class
+        @param if nothing passed, take the last card in deck
+        @param card, return specific card from deck
+        @return returns an instance of card or None
         """
-
-        ERROR1 = "card, '{}', is not a Card type".format(card)
-        assert isinstance(card, c.Card), ERROR1
-
-        index = self.find(card)
-        if index == -1:
-            return None
+        if not args: # no arguments passed
+            try:
+                return  self.__pile.pop()
+            except IndexError:
+                return None
         else:
-            return self.__pile.pop(index) 
+            card = args[0]
+            ERROR1 = "card, '{}', is not a Card type".format(card)
+            assert isinstance(card, c.Card), ERROR1
+
+            index = self.find(card)
+            if index == -1:
+                return None
+            else:
+                return self.__pile.pop(index) 
 
     def popRandomCard(self):
         if self.__pile:         # not empty
