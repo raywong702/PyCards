@@ -66,7 +66,7 @@ class Deck(object):
 
         @param if nothing passed, take the last card in deck
         @param card, return specific card from deck
-        @return returns an instance of card or None
+        @return returns an instance of Card or None
         """
         if not args: # no arguments passed
             try:
@@ -85,6 +85,10 @@ class Deck(object):
                 return self.__pile.pop(index) 
 
     def popRandomCard(self):
+        """Draw a random card from the deck
+
+        @return returns an instance of Card or None
+        """
         if self.__pile:         # not empty
             index = rint(0, len(self.__pile) - 1)
             return self.__pile.pop(index)
