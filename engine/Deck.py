@@ -7,6 +7,8 @@ class Deck(object):
 
     Attributes:
         pile: the deck of cards. Defaults to 1 deck of cards, but can be more.
+
+    @author Raymond Wong
     """
 
     def __init__(self, num_of_decks = 1):

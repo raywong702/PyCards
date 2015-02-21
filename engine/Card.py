@@ -6,6 +6,8 @@ class Card(object):
         suit: integer 0-3, Clubs, Diamonds, Hearts, Spades
 
     Use the accessor methods getRank() and getSuit()
+
+    @author Raymond Wong
     """
     
     __suits = {0:None,

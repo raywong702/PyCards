@@ -6,6 +6,8 @@ class Player(object):
     Attributes:
         name: player's name. string type.
         hand: player's hand. Deck type.
+
+    @author Raymond Wong
     """
     
     def __init__(self, name, hand):
@@ -19,7 +21,7 @@ class Player(object):
 
     def __str__(self):
         """Return human readable representation"""
-        # Put stuff here
+        return "Name: {}\nHand: {}".format(self.getName(), str(self.hand))
 
     def getName(self):
         """Return player's name"""
