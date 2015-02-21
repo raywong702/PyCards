@@ -43,19 +43,11 @@ class Deck(object):
         ERROR1 = "card, '{}', is not a Card type".format(card)
         assert isinstance(card, c.Card), ERROR1
 
-        index = 0
-        rank = card.getRank()
-        suit = card.getSuit()
-
-        for e in self.__pile:
-            c_rank = e.getRank()
-            c_suit = e.getSuit()
-
-            if c_rank == rank and c_suit == suit:
+        for index, cur_card in enumerate(self.__pile):
+            if cur_card.equals(card):
                 return index
-            index += 1
         return -1
-        
+
     def append(self, card):
         """Add a card to the deck.
        
