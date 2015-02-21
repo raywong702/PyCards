@@ -70,7 +70,8 @@ class Card(object):
         self.__suits.update({len(self.__suits):suit})
 
     # Set the card. Used for initialization, 
-    # Can be used for setting up new cards after running the updatSuits and updateRanks functions
+    # Can be used for setting up new cards
+    # after running the updatSuits and updateRanks functions
     def setCard(self, rank, suit):
         assert isinstance(rank, int), "rank '{}' is not an int".format(rank)
         assert isinstance(suit, int), "suit '{}' is not an int".format(suit)

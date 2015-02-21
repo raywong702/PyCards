@@ -69,12 +69,10 @@ class Deck(object):
 
     def pop(self):
         """Draw a card from the the deck."""
-        return self.__pile.pop()
-###### work on this later
-        #try:
-        #    return self.__pile.pop()
-        #except IndexError:
-        #    return none
+        try:
+            return  self.__pile.pop()
+        except IndexError:
+            return None
 
     def popCard(self, card):
         """Remove a specific card from the deck.
