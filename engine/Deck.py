@@ -61,20 +61,19 @@ class Deck(object):
 
         self.__pile.append(card)
 
-    def pop(self, *args):
+    def pop(self, card = None):
         """Draw a card
 
         @param if nothing passed, take the last card in deck
         @param card, return specific card from deck
         @return returns an instance of Card or None
         """
-        if not args: # no arguments passed
+        if card == None: # no arguments passed
             try:
                 return  self.__pile.pop()
             except IndexError:
                 return None
         else:
-            card = args[0]
             ERROR1 = "card, '{}', is not a Card type".format(card)
             assert isinstance(card, c.Card), ERROR1
 
