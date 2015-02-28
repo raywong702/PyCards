@@ -48,6 +48,12 @@ class Card(object):
     def getSuit(self):
         return self.__suit
 
+    def getRankValue(self):
+        return self.__ranks[self.__rank]
+
+    def getSuitValue(self):
+        return self.__suits[self.__suit]
+
 
     # Create new cards besides thes normal 52 card deck and Jokers
     def updateSuits(self, suit):
@@ -66,10 +72,10 @@ class Card(object):
         @param rank creat a new card rank.
         It is an instance of string.
         """
-        assert isinstance(rank, str), "suit '{}' is not a string".format(rank)
-        self.__suits.update({len(self.__ranks):rank})
+        assert isinstance(rank, str), "rank '{}' is not a string".format(rank)
+        self.__ranks.update({len(self.__ranks):rank})
         assert rank, "rank is an empty string"
-        self.__suits.update({len(self.__suits):suit})
+        self.__ranks.update({len(self.__ranks):rank})
 
     # Set the card. Used for initialization, 
     # Can be used for setting up new cards
@@ -85,7 +91,7 @@ class Card(object):
 
         __len_ranks = len(self.__ranks)
         __len_suits = len(self.__suits)
-        __ERROR1 = "rank '{}' must be 1-{}".format(rank, __len_ranks)
+        __ERROR1 = "rank '{}' must be 0-{}".format(rank, __len_ranks)
         __ERROR2 = "suit '{}' must be 0-{}".format(suit, __len_suits)
 
         assert rank >= 0 and rank < __len_ranks, __ERROR1
@@ -107,6 +113,14 @@ class Card(object):
                 self.getSuit() == card.getSuit()):
             return True
         return False
+
+    def printRanks(self):
+        """Prints the card's possible ranks"""
+        print(self.__ranks)
+
+    def printSuits(self):
+        """Prints the card's possible suits"""
+        print(self.__suits)
 
 if __name__ == '__main__':
     pass
