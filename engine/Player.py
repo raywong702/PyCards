@@ -1,4 +1,4 @@
-import Deck as d
+from engine import Deck as d
 
 class Player(object):
     """Represents a player

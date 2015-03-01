@@ -1,6 +1,6 @@
 from random import shuffle as shuf
 from random import randint as rint
-import Card as c
+from engine import Card as c
 
 class Deck(object):
     """Represents one or more deck of cards
