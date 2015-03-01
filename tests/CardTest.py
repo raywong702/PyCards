@@ -37,10 +37,10 @@ class CardTest(unittest.TestCase):
         self.assertEqual(c.Card(1, 4).getSuit(), 4)
 
     def test_ace_rank_value(self):
-        self.assertEquals(c.Card(1, 4).getRankValue(), 'Ace')
+        self.assertEqual(c.Card(1, 4).getRankValue(), 'Ace')
 
     def test_ace_rank_suit(self):
-        self.assertEquals(c.Card(1, 4).getSuitValue(), 'Spades')
+        self.assertEqual(c.Card(1, 4).getSuitValue(), 'Spades')
 
     def test_set_rank_string(self):
 #        self.assertRaises(AssertionError, lambda: c.Card("string", 1))
@@ -77,7 +77,7 @@ class CardTest(unittest.TestCase):
         text = "Blue Eyes White Dragon"
         blue_eyes = self.blue_eyes_white_dragon()
 #        blue_eyes.printRanks()
-        self.assertEquals(str(blue_eyes), text)
+        self.assertEqual(str(blue_eyes), text)
         
     def test_update_rank2(self):
         joker = c.Card(0, 0)
@@ -95,7 +95,7 @@ class CardTest(unittest.TestCase):
         joker.updateSuits(text)
         joker.setCard(0, 5)
         r = joker.getRankValue()
-        self.assertEquals(str(joker), "{} of {}".format(r, text))
+        self.assertEqual(str(joker), "{} of {}".format(r, text))
 
     def test_update_suit2(self):
         joker = c.Card(0, 0)
