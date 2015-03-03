@@ -24,6 +24,30 @@ class CardTest(unittest.TestCase):
     def test_ace(self):
         self.assertEqual(str(c.Card(1, 4)), 'Ace of Spades')
 
+    def test_invalid1(self):
+        with self.assertRaises(AssertionError):
+            c.Card("string", 0)
+        
+    def test_invalid2(self):
+        with self.assertRaises(AssertionError):
+            c.Card(0, "string")
+
+    def test_invalid3(self):
+        with self.assertRaises(AssertionError):
+            c.Card(-1, 0)
+
+    def test_invalid4(self):
+        with self.assertRaises(AssertionError):
+            c.Card(0, -1)
+
+    def test_invalid5(self):
+        with self.assertRaises(AssertionError):
+            c.Card(14, 0)
+
+    def test_invalid6(self):
+        with self.assertRaises(AssertionError):
+            c.Card(0, 5)
+
     def test_joker_rank(self):
         self.assertEqual(c.Card(0, 0).getRank(), 0)
     
@@ -44,28 +68,34 @@ class CardTest(unittest.TestCase):
 
     def test_set_rank_string(self):
 #        self.assertRaises(AssertionError, lambda: c.Card("string", 1))
+        card = c.Card(0, 0)
         with self.assertRaises(AssertionError):
-            c.Card("string", 1)
+            card.setCard("string", 1)
 
     def test_set_suit_string(self):
+        card = c.Card(0, 0)
         with self.assertRaises(AssertionError):
-            c.Card(1, "string")
+            card.setCard(1, "string")
 
     def test_set_rank_value1(self):
+        card = c.Card(0, 0)
         with self.assertRaises(AssertionError):
-            c.Card(-1, 0)
+            card.setCard(-1, 0)
 
     def test_set_rank_value2(self):
+        card = c.Card(0, 0)
         with self.assertRaises(AssertionError):
-            c.Card(14, 0)
+            card.setCard(14, 0)
 
     def test_set_suit_value1(self):
+        card = c.Card(0, 0)
         with self.assertRaises(AssertionError):
-            c.Card(1, -1)
+            card.setCard(1, -1)
 
     def test_set_suit_value2(self):
+        card = c.Card(0, 0)
         with self.assertRaises(AssertionError):
-            c.Card(1, 5)
+            card.setCard(1, 5)
 
     def blue_eyes_white_dragon(self):
         blue_eyes = c.Card(0, 0)
@@ -76,7 +106,6 @@ class CardTest(unittest.TestCase):
     def test_update_rank1(self):
         text = "Blue Eyes White Dragon"
         blue_eyes = self.blue_eyes_white_dragon()
-#        blue_eyes.printRanks()
         self.assertEqual(str(blue_eyes), text)
         
     def test_update_rank2(self):
