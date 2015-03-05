@@ -2,7 +2,7 @@
 
     DeckTest.py is the unittest to test the
     implementation of the methods located within
-    game/Card.py - using python3
+    game/Deck.py - using python3
 
     __authors__ = ["Raymond Wong",
                    "Your name",
